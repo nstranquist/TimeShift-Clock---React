@@ -1,0 +1,16 @@
+/* App styles */
+#app-container {
+  margin: 1rem;
+  box-shadow: 3px 3px 6px var(--gray), -3px 0 6px var(--gray);
+}
+#app-container > div {
+  width: 100%;
+  /* border: 1px solid black; */
+}
+
+@media (max-width: 468px) {
+  #app-container {
+    margin: 0;
+  }
+}
+

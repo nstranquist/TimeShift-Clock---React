@@ -1,0 +1,111 @@
+/* TopNav Styles */
+/* navbar */
+.page-header {
+  z-index: 1;
+}
+.nav-list2 {
+  display: none;
+}
+.brand-name {
+  z-index: -1;
+  padding: 1rem;
+}
+.github-svg-link {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1;
+}
+
+/* nav drawer */
+.nav-drawer {
+  position: fixed;
+  top: calc(2rem + 48px);
+  left: 0;
+  width: 100%; /*can change*/
+  height: auto; /*can change*/
+  background: rgba(255,255,255,0.9) !important;
+  transition: 300ms ease-in-out;
+  transform: translateX(-100%);
+  /* z-index: 2; */
+  /* display: none; */
+  /* transform 300ms ease-in-out; */
+}
+.nav-drawer .nav-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  padding-left: 5%;
+  padding-right: 5%;
+  /* transition: transform 300ms ease-in-out; */
+}
+.nav-drawer .nav-list li {
+  display: inline-block;
+  border-top: 1px solid gray;
+}
+.nav-drawer .nav-list li:last-child {
+  border-bottom: 1px solid gray;
+}
+.nav-drawer .nav-list a {
+  font-weight: bold;
+  text-transform: uppercase;
+  display: block;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  padding-top: .8rem;
+  padding-bottom: .8rem;
+  color: var(--offblack);
+}
+.nav-drawer .nav-list a:hover {
+  transition: 200ms;
+  background: var(--gray);
+}
+.nav-drawer.clicked {
+  transform: translateX(0);
+}
+
+@keyframes menu-in {
+  0% {
+      opacity: 0;
+      background: transparent;
+  } 100% {
+      opacity: 1;
+      background: white;
+  }
+}
+
+@media (min-width: 968px) {
+  .nav-list2 {
+      display: flex;
+      /* justify-content: space-between; */
+      align-items: center;
+      /* float: right; */
+      list-style: none;
+  }
+  .nav-list2 li {
+    border-right: 1px solid var(--gray);
+  }
+  .nav-list2 li:last-child {
+    border-right: none;
+  }
+  .nav-list2 li a {
+    font-weight: bold;
+    text-transform: uppercase;
+    display: block;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: .8rem;
+    padding-bottom: .8rem;
+    color: var(--offblack);
+  }
+  .nav-list2 li a:hover {
+    transition: 200ms;
+    background: var(--gray);
+  }
+  /*.brand-name {
+      //position: static;
+      //display: inline-block;
+  }*/
+  .github-svg-link { display: none; }
+}

@@ -1,0 +1,40 @@
+/* Social Icon bar styles */
+.social-icons-list {
+  position: fixed;
+  bottom: 20%;
+  left: 0;
+  display: none;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-right: 5px;
+  box-shadow: 4px 2px 4px rgba(0, 0, 0, 0.2);
+  background: white;
+  /* overflow: hidden; */
+}
+.social-icons-list li {
+  height: 48px;
+  width: 48px;
+  margin-bottom: 5px;
+  padding-top: 5px;
+  cursor: pointer;
+  background: white;
+}
+.social-icons-list li svg {
+  transition: transform 300ms ease-in-out;
+  background: none;
+}
+.social-icons-list li:hover svg {
+  transform: /*scaleX(1.5)*/ translateX(150%) scale(1.2);
+  box-shadow: 0px 30px 20px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+/* Icons */
+.github-svg {
+  margin-top: 3.25px;
+}
+
+@media (min-width: 968px) {
+  .social-icons-list {
+    display: block;
+  }
+}

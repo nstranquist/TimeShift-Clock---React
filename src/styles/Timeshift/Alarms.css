@@ -1,0 +1,58 @@
+/* TimeShift Alarm styles */
+#ts-alarms {
+  height: auto;
+  min-height: 100px;
+  background: transparent;
+}
+#ts-alarms.clicked {
+  display: none;
+}
+.alarms-container {
+  background: #fff;
+}
+.alarm-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: auto;
+  border-bottom: 1px solid var(--gray);
+  cursor: pointer;
+}
+.alarm-item:last-child {
+  border-bottom: none;
+}
+.left-container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 1rem;
+  line-height: 1.3;
+  flex-wrap: nowrap;
+}
+.right-container {
+  display: flex;
+  align-items: center;
+  padding-right: 1rem;
+  flex-direction: row-reverse;
+}
+.right-container > div {
+  margin: 5%;
+  padding: 5%;
+}
+.imgbox {
+  height: 40px;
+  width: 40px;
+  background: gray;
+  border-radius: 50%;
+}
+/* alarm details */
+.alarm-name {
+  font-weight: bold;
+  font-size: 1.4rem;
+  margin-bottom: 1.2rem;
+}
+.alarm-days {
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+}

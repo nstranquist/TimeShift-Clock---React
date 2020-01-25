@@ -1,0 +1,80 @@
+/* Fullscreen Button Styles */
+#btn-fullscreen {
+  position: absolute;
+  top: 0.2rem;
+  right: 0.3rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding-bottom: 0.3rem;
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+  padding-top: 0.2rem;
+}
+
+/* Menu Button Styles */
+#menu-btn {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  z-index: 1;
+  padding: 1rem;
+}
+#menu-btn span {
+  position: absolute;
+  background: black;
+  width: 30px;
+  height: 3px;
+  border-radius: 3px;
+  display: block;
+  top: calc(50% - 1px);
+  left: calc(50% - 15px);
+  transition: 0.5s;
+}
+#menu-btn span:nth-child(1) {
+  transform: translateY(-10px);
+}
+#menu-btn span:nth-child(3) {
+  transform: translateY(10px);
+}
+#menu-btn.clicked span:nth-child(1) {
+  transform: rotate(-45deg);
+}
+#menu-btn.clicked span:nth-child(2) {
+  transform: translateX(-60px);
+  opacity: 0;
+}
+#menu-btn.clicked span:nth-child(3) {
+  transform: rotate(45deg);
+}
+
+@media (min-width: 968px) {
+  #menu-btn {
+    display: none;
+  }
+}
+
+/* Save Button Styles */
+.save {
+  padding: 1rem;
+  text-align: center;
+}
+.save-wrapper h3 {
+  background: black;
+  text-transform: uppercase;
+  font-size: 1.7rem;
+  color: white;
+  cursor: pointer;
+  width: 150px;
+  margin-left: calc(50% - 75px);
+  border-radius: 5px;
+  border: 1px solid black;
+}
+.save-wrapper h3:hover {
+  background: var(--white);
+  color: var(--offblack);
+  transition: 0.15s ease-in-out;
+  /* border: 1px solid black; */
+}
