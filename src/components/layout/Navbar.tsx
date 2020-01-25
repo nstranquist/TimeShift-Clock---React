@@ -1,6 +1,6 @@
 import React from 'react'
 
-import '../../styles/TopNav.css'
+import '../../styles/layout/TopNav.css'
 
 export const Navbar = () => (
   <header className="page-header shrink-on-scroll text-center">

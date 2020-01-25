@@ -1,5 +1,5 @@
 import React from "react";
-import '../../styles/Feedback.css'
+import '../../styles/components/Feedback.css'
 
 export const Feedback = () => {
   return (

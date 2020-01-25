@@ -1,5 +1,7 @@
 import React from "react";
 
+import '../../styles/components/SocialIcons.css';
+
 export const SocialIcons = () => {
   return (
     <ul className="social-icons-list">

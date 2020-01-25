@@ -1,0 +1,703 @@
+/* colors */
+:root {
+  --white: white;
+  --offwhite: whitesmoke;
+  --black: black;
+  --offblack: #101010;
+  --gray: lightgray;
+  --silver: silver;
+}
+
+/* reset styles */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  line-height: 1.5;
+  color: var(--offblack);
+  background: var(--offwhite);
+}
+
+main {
+  display: block;
+}
+
+a {
+  color: var(--offblack);
+  text-decoration: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.shrink-on-scroll {
+  transition: all 300ms ease-in-out;
+}
+
+.shrink-on-scroll.hide {
+  transform: translateY(calc(-2rem - 50px));
+}
+
+.alarms-toggle, .log-toggle {
+  border-bottom: 1px solid var(--offblack);
+}
+
+/* GitHub icon style */
+/*.github-logo {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    height: 50px;
+    width: 50px;
+}*/
+ul {
+  list-style: none;
+}
+
+.section-header {
+  cursor: pointer;
+  background: silver;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid black;
+  z-index: 1;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.section-header:hover {
+  box-shadow: inset -1px -1px 12px gray;
+}
+
+/* Page Layout styles */
+.page-layout {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+}
+
+/* page sections */
+.page-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 3px 3px 10px gray;
+}
+
+.main-content {
+  margin-top: calc(1rem + 60px);
+  background: var(--offwhite);
+  flex: 1;
+  padding-top: 1rem;
+  border-bottom: 1px solid var(--gray);
+}
+
+@media (min-width: 968px) {
+  .content-wrapper {
+    margin-left: 16.5%;
+    margin-right: 16.5%;
+    width: auto;
+    background: transparent;
+  }
+
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 16.5%;
+    padding-right: 16.5%;
+  }
+}
+/* TopNav Styles */
+/* navbar */
+.page-header {
+  z-index: 1;
+}
+
+.nav-list2 {
+  display: none;
+}
+
+.brand-name {
+  z-index: -1;
+  padding: 1rem;
+}
+
+.github-svg-link {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1;
+}
+
+/* nav drawer */
+.nav-drawer {
+  position: fixed;
+  top: calc(2rem + 48px);
+  left: 0;
+  width: 100%;
+  height: auto;
+  background: rgba(255, 255, 255, 0.9);
+  transition: 300ms ease-in-out;
+  transform: translateX(-100%);
+}
+.nav-drawer .nav-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.nav-drawer .nav-list li {
+  display: inline-block;
+  border-top: 1px solid gray;
+}
+.nav-drawer .nav-list li:last-child {
+  border-bottom: 1px solid gray;
+}
+.nav-drawer .nav-list a {
+  font-weight: bold;
+  text-transform: uppercase;
+  display: block;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  color: var(--offblack);
+}
+.nav-drawer .nav-list a:hover {
+  transition: 200ms;
+  background: var(--gray);
+}
+
+.nav-drawer.clicked {
+  transform: translateX(0);
+}
+
+@keyframes menu-in {
+  0% {
+    opacity: 0;
+    background: transparent;
+  }
+  100% {
+    opacity: 1;
+    background: white;
+  }
+}
+@media (min-width: 968px) {
+  .nav-list2 {
+    display: flex;
+    align-items: center;
+    list-style: none;
+  }
+  .nav-list2 li {
+    border-right: 1px solid var(--gray);
+  }
+  .nav-list2 li:last-child {
+    border-right: none;
+  }
+  .nav-list2 li a {
+    font-weight: bold;
+    text-transform: uppercase;
+    display: block;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    color: var(--offblack);
+  }
+  .nav-list2 li a:hover {
+    transition: 200ms;
+    background: var(--gray);
+  }
+
+  /*.brand-name {
+      //position: static;
+      //display: inline-block;
+  }*/
+  .github-svg-link {
+    display: none;
+  }
+}
+/* App styles */
+#app-container {
+  margin: 1rem;
+  box-shadow: 3px 3px 6px var(--gray), -3px 0 6px var(--gray);
+}
+
+#app-container > div {
+  width: 100%;
+}
+
+@media (max-width: 468px) {
+  #app-container {
+    margin: 0;
+  }
+}
+#timeshift-clock {
+  position: relative;
+  background: #FFF !important;
+}
+
+#ts-clock-time {
+  font-size: 5rem;
+  height: 100%;
+  width: auto;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.fullscreen-mode {
+  height: 100vh;
+  width: 100vw;
+}
+.fullscreen-mode #ts-clock-time {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 6rem;
+  padding: 0;
+  height: auto;
+}
+
+@media only screen and (min-width: 768px) {
+  #ts-clock-time {
+    font-size: 8rem;
+  }
+
+  .fullscreen-mode #ts-clock-time {
+    font-size: 9rem;
+  }
+
+  .fullscreen-mode #btn-fullscreen {
+    font-size: 2rem;
+  }
+}
+@media only screen and (min-width: 1968px) {
+  .fullscreen-mode #ts-clock-time {
+    font-size: 13rem;
+  }
+
+  .fullscreen-mode #btn-fullscreen {
+    font-size: 3.5rem;
+  }
+}
+/*@media (max-width: 768px) {
+    #ts-clock-time { font-size: 6rem; }
+}*/
+#ts-options {
+  height: auto;
+  min-height: 100px;
+  background: transparent;
+}
+
+#ts-options.clicked {
+  display: none;
+}
+
+.ts-list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+.ts-row {
+  border-bottom: 1px solid black;
+  padding: 0.3rem;
+}
+
+.ts-row:last-child {
+  border-bottom: none;
+  padding-bottom: 1rem;
+}
+
+.ts-left {
+  width: 33%;
+  float: left;
+  text-align: right;
+}
+
+.ts-right {
+  width: 66%;
+  float: right;
+}
+
+#ts-alarms {
+  height: auto;
+  min-height: 100px;
+  background: transparent;
+}
+#ts-alarms.clicked {
+  display: none;
+}
+
+.alarms-container {
+  background: #FFF;
+}
+
+.alarm-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: auto;
+  border-bottom: 1px solid var(--gray);
+  cursor: pointer;
+}
+
+.alarm-item:last-child {
+  border-bottom: none;
+}
+
+.left-container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 1rem;
+  line-height: 1.3;
+  flex-wrap: nowrap;
+}
+
+.right-container {
+  display: flex;
+  align-items: center;
+  padding-right: 1rem;
+  flex-direction: row-reverse;
+}
+
+.right-container > div {
+  margin: 5%;
+  padding: 5%;
+}
+
+.imgbox {
+  height: 40px;
+  width: 40px;
+  background: gray;
+  border-radius: 50%;
+}
+
+/* alarm details */
+.alarm-name {
+  font-weight: bold;
+  font-size: 1.4rem;
+  margin-bottom: 1.2rem;
+}
+
+.alarm-days {
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+}
+
+/* TimeShift Log styles */
+#ts-log {
+  height: auto;
+  min-height: 100px;
+  background: transparent;
+  /*max-height: 75vh;
+  overflow-y: auto;*/
+}
+#ts-log.clicked {
+  display: none;
+}
+
+.log-container {
+  background: #FFF;
+}
+
+.log-entry {
+  border-bottom: 1px solid var(--gray);
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.log-entry:last-child {
+  border-bottom: none;
+}
+
+.log-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.33rem;
+}
+
+.log-body {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-right: 30px;
+  text-align: start;
+}
+
+.page-feedback {
+  margin: 2rem;
+  border: 1px solid var(--gray);
+  background: #FFF;
+  box-shadow: 3px 3px 6px var(--gray);
+}
+
+.feedback-container {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 20%;
+  margin-right: 20%;
+  background: #FFF;
+}
+.feedback-container h2 {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.feedback-container > * > * {
+  width: 80%;
+}
+
+form.feedback-form p {
+  margin-top: 1.3rem;
+  margin-bottom: 0.7rem;
+  width: 100%;
+}
+form.feedback-form input.submit-btn {
+  display: block;
+  width: 40%;
+  margin-left: 30%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  outline: none;
+  background: var(--black);
+  color: white;
+  border: 1px solid black;
+  height: 1, 7ren;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1.7rem;
+  cursor: pointer;
+}
+form.feedback-form input.submit-btn:hover {
+  background: white;
+  color: black;
+  border: 1px solid black;
+}
+
+.page-footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background: var(--white);
+  border-top: 1px solid var(--gray);
+  padding: 1rem;
+}
+
+footer a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.3rem;
+  width: auto;
+  color: blue;
+  letter-spacing: 1px;
+}
+
+footer a span {
+  padding-right: 5px;
+}
+
+#btn-fullscreen {
+  position: absolute;
+  top: 0.2rem;
+  right: 0.3rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding-bottom: 0.3rem;
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+  padding-top: 0.2rem;
+}
+
+#menu-btn {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  z-index: 1;
+  padding: 1rem;
+}
+#menu-btn span {
+  position: absolute;
+  background: black;
+  width: 30px;
+  height: 3px;
+  border-radius: 3px;
+  display: block;
+  top: calc(50% - 1px);
+  left: calc(50% - 15px);
+  transition: 0.5s;
+}
+#menu-btn span:nth-child(1) {
+  transform: translateY(-10px);
+}
+#menu-btn span:nth-child(3) {
+  transform: translateY(10px);
+}
+
+#menu-btn.clicked span:nth-child(1) {
+  transform: rotate(-45deg);
+}
+
+#menu-btn.clicked span:nth-child(2) {
+  transform: translateX(-60px);
+  opacity: 0;
+}
+
+#menu-btn.clicked span:nth-child(3) {
+  transform: rotate(45deg);
+}
+
+@media (min-width: 968px) {
+  #menu-btn {
+    display: none;
+  }
+}
+.save {
+  padding: 1rem;
+  text-align: center;
+}
+
+.save-wrapper h3 {
+  background: black;
+  text-transform: uppercase;
+  font-size: 1.7rem;
+  color: white;
+  cursor: pointer;
+  width: 150px;
+  margin-left: calc(50% - 75px);
+  border-radius: 5px;
+  border: 1px solid black;
+}
+.save-wrapper h3:hover {
+  background: var(--white);
+  color: var(--offblack);
+  transition: 0.15s ease-in-out;
+}
+
+input[type=checkbox].toggle-switch {
+  display: none;
+}
+
+input[type=checkbox].toggle-switch + label {
+  /* hide defaults */
+  /* can toggle size with 'font-size: [size];'  if using "em" instead of "rem" */
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  /* add new styles */
+  width: 4rem;
+  height: 2rem;
+  border-radius: 3rem;
+  background: lightgray;
+  outline: 0;
+  cursor: pointer;
+  transition: background-color 0.09s ease-in-out;
+  position: relative;
+  /* for cross-browser */
+  display: inline-block;
+}
+
+input[type=checkbox].toggle-switch:checked + label {
+  background-color: #3AF;
+}
+
+input[type=checkbox].toggle-switch + label::after {
+  content: "";
+  height: 2rem;
+  width: 2rem;
+  border-radius: 3rem;
+  background: white;
+  position: absolute;
+  transform: scale(0.7);
+  left: 0;
+  transition: left 0.09s ease-in-out;
+  box-shadow: 0 0.1rem rgba(0, 0, 0, 0.5);
+}
+
+input[type=checkbox].toggle-switch:checked + label::after {
+  left: 2rem;
+}
+
+/* Active List styles */
+.active-presets {
+  position: absolute;
+  left: 0.5rem;
+  bottom: 0.2rem;
+  font-size: 1.2rem;
+}
+
+@media (min-width: 768px) {
+  .active-presets {
+    font-size: 1.3rem;
+  }
+}
+@media (min-width: 1468px) {
+  .active-presets {
+    font-size: 1.8rem;
+  }
+}
+.social-icons-list {
+  position: fixed;
+  bottom: 20%;
+  left: 0;
+  display: none;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-right: 5px;
+  box-shadow: 4px 2px 4px rgba(0, 0, 0, 0.2);
+  background: white;
+}
+.social-icons-list li {
+  height: 48px;
+  width: 48px;
+  margin-bottom: 5px;
+  padding-top: 5px;
+  cursor: pointer;
+  background: white;
+}
+.social-icons-list li svg {
+  transition: transform 300ms ease-in-out;
+  background: none;
+}
+.social-icons-list li:hover svg {
+  transform: translateX(150%) scale(1.2);
+  box-shadow: 0px 30px 20px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+.github-svg {
+  margin-top: 3.25px;
+}
+
+@media (min-width: 968px) {
+  .social-icons-list {
+    display: block;
+  }
+}
+
+/*# sourceMappingURL=output.css.map */

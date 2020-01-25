@@ -10,8 +10,8 @@ import '../../styles/Timeshift/Alarms.css'
 import '../../styles/Timeshift/Clock.css'
 import '../../styles/Timeshift/Log.css'
 import '../../styles/Timeshift/Options.css'
-import '../../styles/AlarmToggle.css'
-import '../../styles/ActivePresets.css'
+import '../../styles/components/AlarmToggle.css'
+import '../../styles/components/ActivePresets.css'
 
 
 export const Timeshift = () => {

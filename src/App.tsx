@@ -5,7 +5,7 @@ import { AboutPage } from './pages/About/About'
 import { Navbar } from './components/layout/Navbar'
 import { Footer } from './components/layout/Footer';
 import { Feedback } from './components/Feedback/Feedback';
-import './styles/PageLayout.css'
+import './styles/layout/PageLayout.css'
 import { SocialIcons } from './components/SocialIcons/SocialIcons';
 
 const App: React.FC = () => {
@@ -27,4 +27,4 @@ const App: React.FC = () => {
   );
 }
 
-export default App;
+export default App
