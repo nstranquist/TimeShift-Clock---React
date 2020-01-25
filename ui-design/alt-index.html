@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="x-ua-compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="TimeShift Clock" description="The Ultimate Productivity Time Tracker"/>
+        <title>TimeShift Clock - Shift Time in your Favor!</title>
+        <link rel="stylesheet" type="text/css" href="./output.css" />
+    </head>
+    <body>
+        <div class="page-layout">
+            <header class="page-header shrink-on-scroll text-center">
+                <div id="menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <h1 class="brand-name">
+                    <a href="#">Time<span>Shift</span></a>
+                </h1>
+                <a href="https://github.com/nstranquist" class="github-svg-link">
+                    <object data="./assets/svg/github.svg" type="image/svg+xml"></object>
+                </a>
+                <ul class="nav-list2">
+                    <li><a href="#clock" class="a-clock">Clock</a></li>
+                    <li><a href="#alarms-section" class="a-alarm">Alarms</a></li>
+                    <li><a href="#log-section" class="a-log">Log</a></li>
+                    <li><a href="#feedback-section">Feedback</a></li>
+                </ul>
+                <nav class="nav-drawer">
+                    <ul class="nav-list drawer-list">
+                        <li><a href="#clock" class="a-clock">Clock</a></li>
+                        <li><a href="#alarms-section" class="a-alarm">Alarms</a></li>
+                        <li><a href="#log-section" class="a-log">Log</a></li>
+                        <li><a href="#feedback-section">Feedback</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <div class="content-wrapper">
+                <main class="main-content">
+                    <div id="app-container">
+                        <!-- Clock, TimeShift, Alarms, Log -->
+                        <section id="timeshift-clock">
+                            <div id="clock" class="text-center"></div>
+                            <div id="btn-fullscreen">Fullscreen: [X]</div>
+                            <div class="active-presets">Active: [none]</div>
+                        </section>
+                        <section class="timeshift-container" id="timeshift-section">
+                            <header class="timeshift-toggle section-header">
+                                <h3 class="timeshift-header">TimeShift</h3>
+                            </header>
+                            <div id="timeshift">
+                                <div class="timeshift-container">
+                                    <ul class="ts-list">
+                                        <li class="ts-row">
+                                            <h4 class="ts-left">Option 1:</h4>
+                                            <div class="ts-right">
+                                                <input type="radio" value="yes" /> Yes
+                                                <input type="radio" value="no" /> No
+                                            </div>
+                                        </li>
+                                        <li class="ts-row">
+                                            <h4 class="ts-left">Option 2:</h4>
+                                            <div class="ts-right">
+                                                <input type="radio" value="red" /> Red
+                                                <input type="radio" value="blue" /> Blue
+                                                <input type="radio" value="green" /> Green
+                                                <input type="radio" value="yellow" /> Yellow
+                                                <p>second row instructions / options here. Time! <input type="time" /></p>
+                                            </div>
+                                        </li>
+                                        <li class="ts-row">
+                                            <h4 class="ts-left">Option 3:</h4>
+                                            <div class="ts-right">
+                                                <p>Pick a Date</p>
+                                                <input type="date" />                                           
+                                            </div>
+                                        </li>
+                                        <li class="ts-row">
+                                            <h4 class="ts-left">Option 4:</h4>
+                                            <div class="ts-right">
+                                                <p>second row options here, or instead just try adding an entire paragraph. I mean, it's not like anyone cares. In fact, they probably care a lot because a long-winded paragraph would hopefully be placed there for good reaon.</p>
+                                                <p>Was that useful?</p>
+                                                <input type="radio" value="yes" /> Yes
+                                                <input type="radio" value="no" /> No
+                                            </div>
+                                        </li>
+                                        <li class="ts-row">
+                                            <h4 class="ts-left">Option 5:</h4>
+                                            <div class="ts-right">
+                                                <p>Here, you can do some cool stuff, like...</p>
+                                                <ul>
+                                                    <li><input type="checkbox" /> add a list</li>
+                                                    <li><input type="checkbox" /> of items</li>
+                                                    <li><input type="checkbox" /> that would help</li>
+                                                    <li><input type="checkbox" /> the user</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="ts-row save">
+                                            <div class="save-wrapper">
+                                                <h3>Save</h3>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="alarms-container" id="alarms-section">
+                            <header class="alarms-toggle section-header">
+                                <h3 class="alarms-header">Alarms</h3>
+                            </header>
+                            <div id="alarms">
+                                <div class="alarms-container">
+                                <div class="alarm-item">
+                                    <div class="left-container">
+                                        <div class="alarm-name">Alarm 1</div>
+                                        <div class="alarm-days">M|T|W|R|F|S|S</div>
+                                    </div>
+                                    <div class="right-container">
+                                        <div class="alarm-status">
+                                            <input type="checkbox" class="toggle-switch" id="checkbox-1" />
+                                            <label for="checkbox-1"></label>
+                                        </div>
+                                        <!--<div class="">Item</div>
+                                        <div class="">Item</div>-->
+                                    </div>
+                                </div>
+                                <div class="alarm-item">
+                                    <div class="left-container">
+                                        <div class="alarm-name">Alarm 2</div>
+                                        <div class="alarm-days">M|T|W|R|F|S|S</div>
+                                    </div>
+                                    <div class="right-container">
+                                        <div class="alarm-status">
+                                            <input type="checkbox" class="toggle-switch" id="checkbox-2" />
+                                            <label for="checkbox-2"></label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="alarm-item">
+                                    <div class="left-container">
+                                        <div class="alarm-name">Alarm 3</div>
+                                        <div class="alarm-days">M|T|W|R|F|S|S</div>
+                                    </div>
+                                    <div class="right-container">
+                                        <div class="alarm-status">
+                                            <input type="checkbox" class="toggle-switch" id="checkbox-3" />
+                                            <label for="checkbox-3"></label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="alarm-item">
+                                    <div class="left-container">
+                                        <div class="alarm-name">Alarm 4</div>
+                                        <div class="alarm-days">M|T|W|R|F|S|S</div>
+                                    </div>
+                                    <div class="right-container">
+                                        <div class="alarm-status">
+                                            <input type="checkbox" class="toggle-switch" id="checkbox-4" />
+                                            <label for="checkbox-4"></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="log-container" id="log-section">
+                            <header class="log-toggle section-header">
+                                <h3 class="log-section-header">Log</h3>
+                            </header>
+                            <div id="log">
+                                <div class="log-container">
+                                <div class="log-entry">
+                                    <div class="log-header">
+                                        <h3 class="log-title">Title</h3>
+                                        <p class="log-date">Date</p>
+                                    </div>
+                                    <div class="log-body">
+                                        <p class="log-description">A shorter log description</p>
+                                    </div>
+                                </div>
+                                <div class="log-entry">
+                                    <div class="log-header">
+                                        <h3 class="log-title">Title</h3>
+                                        <p class="log-date">Date</p>
+                                    </div>
+                                    <div class="log-body">
+                                        <p class="log-description">This is the log body, often some sort of long description could go here or not, it is up to the individual logger that has the honor bestowed upon him or her to use this wonderfull app whose name is in fact TimeShift Clock, upon which using may or may not shift time in your favor</p>
+                                    </div>
+                                </div>
+                                <div class="log-entry">
+                                    <div class="log-header">
+                                        <h3 class="log-title">Title</h3>
+                                        <p class="log-date">Date</p>
+                                    </div>
+                                    <div class="log-body">
+                                        <p class="log-description">A shorter log description</p>
+                                    </div>
+                                </div>
+                                <div class="log-entry">
+                                    <div class="log-header">
+                                        <h3 class="log-title">Title</h3>
+                                        <p class="log-date">Date</p>
+                                    </div>
+                                    <div class="log-body">
+                                        <p class="log-description">A shorter log description</p>
+                                    </div>
+                                </div>
+                                <div class="log-entry">
+                                    <div class="log-header">
+                                        <h3 class="log-title">Title</h3>
+                                        <p class="log-date">Date</p>
+                                    </div>
+                                    <div class="log-body">
+                                        <p class="log-description">A shorter log description</p>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </main>
+                <section class="page-feedback" id="feedback-section">
+                    <div class="feedback-container text-center">
+                        <h2>Feedback</h2>
+                        <form class="feedback-form">
+                            <p>Name</p>
+                            <input type="text" name="Name" placeholder="Enter Name" />
+                            <p>Email</p>
+                            <input type="text" name="Email" placeholder="Enter Email" />
+                            <p>Message</p>
+                            <textarea name="message" placeholder="Type Here"></textarea>
+                            <input class="submit-btn" type="submit" name="submit" value="Send" />
+                        </form>
+                    </div>
+                </section>
+                <footer class="page-footer text-center">
+                    <h3>TimeShift Clock</h3>
+                    <p>
+                        Created by Nico, 2019
+                    </p>
+                    <a href="https://github.com/nstranquist">
+                        <span style="cursor: pointer; z-index: 0;">
+                            <object data="assets/svg/github-footer.svg" type="image/svg+xml"></object>
+                        </span>
+                        GitHub
+                    </a>
+                </footer>
+            </div><!-- end wrapper -->
+        </div>
+
+        <!-- Extras -->
+        <ul class="social-icons-list">
+            <li>
+                <a href="https://facebook.com">
+                    <object data="assets/svg/facebook.svg" type="image/svg+xml"></object>
+                </a>
+            </li>
+            <li>
+                <a href="https://instagram.com">
+                    <object data="assets/svg/instagram.svg" type="image/svg+xml"></object>
+                </a>
+            </li>
+            <li>
+                <a href="https://linkedin.com">
+                    <object data="assets/svg/linkedin.svg" type="image/svg+xml"></object>
+                </a>
+            </li>
+            <li>
+                <a href="https://twitter.com">
+                    <object data="assets/svg/twitter.svg" type="image/svg+xml"></object>
+                </a>
+            </li>
+            <li>
+                <a href="https://youtube.com">
+                    <object data="assets/svg/youtube.svg" type="image/svg+xml"></object>
+                </a>
+            </li>
+        </ul>
+
+
+        <script src="./script.js" type="text/javascript"></script>
+        <script src="./timeshift-controls.js" type="text/javascript"></script>
+    </body>
+</html>

@@ -1,0 +1,44 @@
+.text-center {
+    text-align: center;
+}
+
+.shrink-on-scroll {
+    transition: all 300ms ease-in-out;
+}
+
+.shrink-on-scroll.hide {
+    transform: translateY(calc(-2rem - 50px));
+}
+
+.alarms-toggle, .log-toggle {
+    border-bottom: 1px solid var(--offblack);
+}
+
+/* GitHub icon style */
+/*.github-logo {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    height: 50px;
+    width: 50px;
+}*/
+
+ul {
+    list-style: none;
+}
+
+.section-header {
+    cursor: pointer;
+    background: silver;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid black;
+    z-index: 1;
+    text-align: center;
+    text-transform: uppercase;
+}
+.section-header:hover {
+    //text-decoration: underline;
+    box-shadow: inset -1px -1px 12px gray;
+    //border-bottom-color: gray;
+}

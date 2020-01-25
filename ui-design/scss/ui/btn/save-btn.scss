@@ -1,0 +1,23 @@
+.save {
+    padding: 1rem;
+    text-align: center;
+}
+.save-wrapper {
+    h3 {
+        background: black;
+        text-transform: uppercase;
+        font-size: 1.7rem;
+        color: white;
+        cursor: pointer;
+        width: 150px;
+        margin-left: calc(50% - 75px);
+        border-radius: 5px;
+        border: 1px solid black;
+    }
+    h3:hover {
+        background: var(--white);
+        color: var(--offblack);
+        transition: .15s ease-in-out;
+        //border: 1px solid black;
+    }
+}

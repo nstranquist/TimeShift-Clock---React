@@ -1,0 +1,13 @@
+/* Active List styles */
+.active-presets {
+    position: absolute;
+    left: .5rem;
+    bottom: .2rem;
+    font-size: 1.2rem;
+}
+@media (min-width: 768px) {
+    .active-presets { font-size: 1.3rem; }
+}
+@media (min-width: 1468px) {
+    .active-presets { font-size: 1.8rem; }
+}

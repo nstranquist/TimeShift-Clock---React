@@ -1,0 +1,56 @@
+// Feedback Styles
+.page-feedback {
+    margin: 2rem;
+    border: 1px solid var(--gray);
+    background: #FFF;
+    box-shadow: 3px 3px 6px var(--gray);
+}
+
+.feedback-container {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 20%;
+    margin-right: 20%;
+    //border: 1px solid black;
+    background: #FFF;
+
+    h2 {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 2rem;
+    }
+}
+.feedback-container > * > * {
+    width: 80%;
+}
+form.feedback-form {
+
+    p {
+        margin-top: 1.3rem;
+        margin-bottom: .7rem;
+        width: 100%;
+    }
+    input.submit-btn {
+        display: block;
+        width: 40%;
+        margin-left: 30%;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        outline: none;
+        background: var(--black);
+        color: white;
+        border: 1px solid black;
+        height: 1,7ren;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        border-radius: 5px;
+        font-weight: bold;
+        font-size: 1.7rem;
+        cursor: pointer;
+    }
+    input.submit-btn:hover {
+        background: white;
+        color: black;
+        border: 1px solid black;
+    }
+}

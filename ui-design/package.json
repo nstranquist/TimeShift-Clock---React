@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "express": "^4.16.4",
+    "node": "^12.1.0",
+    "surge": "^0.20.4"
+  }
+}

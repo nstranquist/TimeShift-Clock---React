@@ -1,0 +1,32 @@
+// TimeShift Options styles
+#ts-options {
+    height: auto;
+    min-height: 100px;
+    background: transparent;
+}
+#ts-options.clicked { display: none; }
+
+// timeshift layout
+.ts-list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+.ts-row {
+    //width: 100%;
+    border-bottom: 1px solid black;
+    padding: .3rem;
+}
+.ts-row:last-child {
+    border-bottom: none;
+    padding-bottom: 1rem;
+}
+.ts-left {
+    width: 33%;
+    float: left;
+    text-align: right;
+}
+.ts-right {
+    width: 66%;
+    float: right;
+}

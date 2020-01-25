@@ -1,0 +1,39 @@
+// Toggle styles
+input[type=checkbox].toggle-switch {
+    display: none;
+}
+input[type=checkbox].toggle-switch + label { /* hide defaults */
+    /* can toggle size with 'font-size: [size];'  if using "em" instead of "rem" */
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    /* add new styles */
+    width: 4rem;
+    height: 2rem;
+    border-radius: 3rem;
+    background: lightgray;
+    outline: 0;
+    cursor: pointer;
+    transition: background-color 0.09s ease-in-out;
+    position: relative;
+    /* for cross-browser */
+    display: inline-block;
+}
+input[type=checkbox].toggle-switch:checked + label {
+    background-color: #3AF;
+}
+input[type=checkbox].toggle-switch + label::after  {
+    content: '';
+    height: 2rem;
+    width: 2rem;
+    border-radius: 3rem;
+    background: white;
+    position: absolute;
+    transform: scale(0.7);
+    left: 0;
+    transition: left 0.09s ease-in-out;
+    box-shadow: 0 0.1rem rgba(0,0,0,0.5);
+}
+input[type=checkbox].toggle-switch:checked + label::after {
+    left: 2rem;
+}
