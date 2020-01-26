@@ -15,26 +15,38 @@ export const TS_ClockUI: React.FC<ClockProps> = ({
   activePreset,
   setTime,
 }) => {
+  const [isFullscreen, setIsFullscreen] = useState<boolean>(false)
+
   // Fullscreen
   useEffect(() => {
-    fullscreenListener()
+    // fullscreenListener()
     updateClock()
   }, [])
 
-  const fullscreenListener = () => {
+  const handleFullscreenClick = () => {
     const tsclockSection = document.getElementById("timeshift-clock");
-    const btnFullscreen = document.getElementById("btn-fullscreen");
+    // const btnFullscreen = document.getElementById("btn-fullscreen");
 
-    const elem = document.documentElement; //document element
-    btnFullscreen!.addEventListener("click", function() {
-      if (elem.requestFullscreen) {
-        tsclockSection!.requestFullscreen();
-        tsclockSection!.classList.toggle("fullscreen-mode");
-      }
-      else {
-        document.exitFullscreen();
-      }
-    });
+    // const elem = document.documentElement; //document element
+    // btnFullscreen!.addEventListener("click", function() {
+    if(isFullscreen) {
+      // close fullscreen
+      document.exitFullscreen()
+      setIsFullscreen(false)
+    }
+    else {
+      tsclockSection?.requestFullscreen()
+      setIsFullscreen(true)
+    }
+    
+    // if (elem.re) {
+    //     tsclockSection!.requestFullscreen();
+    //     tsclockSection!.classList.toggle("fullscreen-mode");
+    //   }
+    //   else {
+    //     document.exitFullscreen();
+    //   }
+    // });
   }
 
   const updateClock = () => {
@@ -44,12 +56,34 @@ export const TS_ClockUI: React.FC<ClockProps> = ({
     }, 995)
   }
 
+  // function runTimer() {
+  //   const date = new Date();
+  //   let h = date.getHours();
+  //   let m = date.getMinutes();
+  //   let s = date.getSeconds();
+  //   //let ampm = "am";
+  
+  //   if (h > 12) {
+  //       h -= 12;
+  //       //ampm = "pm";
+  //   } else if (h === 0)
+  //       h = 12;
+  
+  //   m = (m < 10) ? "0" + m : m;
+  //   s = (s < 10) ? "0" + s : s;
+  
+  //   const time = h + ":" + m + ":" + s; //ommitted ampm on purpose
+  //   //$('#clock').innerText=time;
+  //   tsclock.innerText = time;  //optimized
+  //   //$('#ampm').innerText=ampm;    
+  // }
+
   return (
     <section id="timeshift-clock">
       <div id="ts-clock-time" className="text-center">
+        {time.getHours()}:{time.getMinutes()}:{time.getSeconds()}
       </div>
-      <div>{time.getHours()}:{time.getMinutes()}:{time.getSeconds()}</div>
-      <div id="btn-fullscreen">
+      <div id="btn-fullscreen" onClick={handleFullscreenClick}>
         Fullscreen: [X]
       </div>
       <div className="active-presets">Active: [none]</div>
