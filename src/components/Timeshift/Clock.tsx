@@ -19,16 +19,19 @@ export const TS_ClockUI: React.FC<ClockProps> = ({
 
   // Fullscreen
   useEffect(() => {
-    // fullscreenListener()
     updateClock()
   }, [])
 
+  const updateClock = () => {
+    clearInterval()
+    setInterval(() => {
+      setTime(new Date())
+    }, 995)
+  }
+
   const handleFullscreenClick = () => {
     const tsclockSection = document.getElementById("timeshift-clock");
-    // const btnFullscreen = document.getElementById("btn-fullscreen");
 
-    // const elem = document.documentElement; //document element
-    // btnFullscreen!.addEventListener("click", function() {
     if(isFullscreen) {
       // close fullscreen
       document.exitFullscreen()
@@ -38,22 +41,6 @@ export const TS_ClockUI: React.FC<ClockProps> = ({
       tsclockSection?.requestFullscreen()
       setIsFullscreen(true)
     }
-    
-    // if (elem.re) {
-    //     tsclockSection!.requestFullscreen();
-    //     tsclockSection!.classList.toggle("fullscreen-mode");
-    //   }
-    //   else {
-    //     document.exitFullscreen();
-    //   }
-    // });
-  }
-
-  const updateClock = () => {
-    clearInterval()
-    setInterval(() => {
-      setTime(new Date())
-    }, 995)
   }
 
   // function runTimer() {
