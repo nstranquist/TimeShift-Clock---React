@@ -108,7 +108,7 @@ const TS_LogUI: React.FC<LogProps> = ({
           <div className="save-wrapper" style={{textAlign:'center'}}>
             <h3 style={{paddingLeft:15,paddingRight:15, marginBottom:10, width:'auto', marginLeft:0,marginRight:0,display:'inline-block'}}
               onClick={handleAddLog}>
-              Add Log</h3>
+              Add</h3>
           </div>
         </div>
       )}

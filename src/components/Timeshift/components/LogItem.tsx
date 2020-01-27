@@ -103,7 +103,7 @@ export const LogItem: React.FC<LogItemProps> = ({
       <form className="log-entry" onSubmit={handleSubmit}
         onClick={handleCloseForm}>
         <div className="log-header">
-          <input className="log-title" name="title" value={formData.title} onChange={handleChange} />
+          <input className="log-title" name="title" autoFocus value={formData.title} onChange={handleChange} />
           <p className="log-date">{date.getMonth()+1}/{date.getDate()}/{date.getFullYear()}</p> {/* month/day/year */}
         </div>
         <div className="log-body">
