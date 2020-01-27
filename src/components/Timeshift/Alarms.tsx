@@ -38,7 +38,7 @@ export const TS_AlarmsUI: React.FC<AlarmsProps> = ({
   
   const handleAddAlarm = () => {
     // add alarm, form has to pop up
-    setAdding(true)
+    setAdding(!adding)
   }
   const handleSubmitAddAlarm = (alarmData: any) => {
     const newAlarm = {
@@ -60,22 +60,26 @@ export const TS_AlarmsUI: React.FC<AlarmsProps> = ({
       </header>
       {open && (
         <div id="ts-alarms">
-          {adding && <AddAlarmForm addForm={handleSubmitAddAlarm} />}
+
+          {/* List of Alarms */}
           <div className="alarms-container">
             {alarms.map((alarm, index) => (
               <AlarmItem
-                key={index}
-                alarm={alarm}
-                toggleActive={toggleActive}
-                editAlarm={editAlarm}
+              key={index}
+              alarm={alarm}
+              toggleActive={toggleActive}
+              editAlarm={editAlarm}
               />
-            ))}
+              ))}
 
             {alarms.length < 1 && (
               <div style={{textAlign:'center',padding:15}}>
                 <p>You haven't set any alarms yet</p>
               </div>
             )}
+
+            {/* Add Alarm Form */}
+            {adding && <AddAlarmForm addForm={handleSubmitAddAlarm} />}
 
             {/* Add Alarm Button */}
             <div className="save-wrapper" style={{textAlign:'center'}}>

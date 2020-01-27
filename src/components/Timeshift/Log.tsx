@@ -4,6 +4,7 @@ import { LogItem } from "./components/LogItem";
 import { RootState } from "../../store/rootReducer";
 import { ILogItem, addLog, editLog, deleteLog } from "../../store/Log";
 import uuidv4 from 'uuid'
+import { AddLogForm } from "./components/AddLogForm";
 
 interface LogProps {
   logs: ILogItem[]
@@ -19,30 +20,18 @@ const TS_LogUI: React.FC<LogProps> = ({
   deleteLog,
 }) => {
   const [open, setOpen] = useState<boolean>(true)
-  // const [editingLog, setEditingLog] = useState<boolean>(false)
-  const [logItemData, setLogItemData] = useState<any>({ title: '', description: '' })
+  const [adding, setAdding] = useState<boolean>(false)
 
   const toggleHeaderOpen = () => {
     setOpen(!open)
   }
 
-  const handleFormChange = (e: any) => {
-    setLogItemData({
-      ...logItemData,
-      [e.target.name]: e.target.value
-    })
-  }
-
   const handleAddLog = () => {
     // create popup, until then just use inputs
-    handleSubmit()
-    clearAddForm()
+    setAdding(!adding)
   }
 
-  const clearAddForm = () => setLogItemData({ title: '', description: '' })
-
-  const handleSubmit = (e?: any) => {
-    if(e) e.preventDefault()
+  const handleSubmitAddLog = (logItemData: any) => {
     // call upon add event button
     const newLogItem = {
       id: uuidv4(),
@@ -52,7 +41,7 @@ const TS_LogUI: React.FC<LogProps> = ({
     }
     console.log('new item:', newLogItem)
     addLog(newLogItem)
-    clearForm()
+    setAdding(false)
   }
 
   const handleEditLog = (newLog: ILogItem, id: string) => {
@@ -64,8 +53,6 @@ const TS_LogUI: React.FC<LogProps> = ({
   const handleDeleteLog = (id: string) => {
     deleteLog(id)
   }
-
-  const clearForm = () => setLogItemData({ title: '', description: '' })
 
   return (
     <section className="log-container" id="log-section">
@@ -91,19 +78,7 @@ const TS_LogUI: React.FC<LogProps> = ({
             )}
           </div>
           {/* Add Log Form Here (later move to a created modal) */}
-          <form className="add-log-form" onSubmit={handleSubmit} style={{marginTop:20}}>
-            <p className="form-item">
-              <label htmlFor="title">Title</label>
-              <input type="text" name="title" value={logItemData.title} onChange={handleFormChange} />
-            </p>
-            <p className="form-item">
-              <label htmlFor="description">Description</label>
-              <input type="description" name="description" value={logItemData.description} onChange={handleFormChange} />
-            </p>
-            <p className="form-item">
-              <button type="submit">Submit</button>
-            </p>
-          </form>
+          {adding && <AddLogForm handleAddLog={handleSubmitAddLog} /> }
           {/* Add Log Button Here */}
           <div className="save-wrapper" style={{textAlign:'center'}}>
             <h3 style={{paddingLeft:15,paddingRight:15, marginBottom:10, width:'auto', marginLeft:0,marginRight:0,display:'inline-block'}}
