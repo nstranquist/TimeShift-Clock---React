@@ -1,10 +1,56 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
+import { connect } from 'react-redux'
+import { RootState } from "../../store/rootReducer";
 
-export const TS_Options = () => {
+interface ClockProps {
+  active: boolean,
+  numbersActive: number[]
+}
+
+const defaultOptions = {
+  isActive: false, // make true later
+  numbersActive: [],
+}
+
+export const TS_OptionsUI: React.FC<ClockProps> = ({
+  active,
+  numbersActive,
+}) => {
   const [open, setOpen] = useState<boolean>(true)
+  const [options, setOptions] = useState<any>(defaultOptions)
 
   const toggleHeaderOpen = () => {
     setOpen(!open)
+  }
+
+  const handleChange = (e: any) => {
+    switch(e.target.name) {
+      case 'isActive':
+        setOptions({
+          ...options,
+          isActive: e.target.value === 'yes' ? true : false
+        })
+        return;
+      case 'numbersActive':
+        let newNumbers = [...options.numbersActive]
+        if(e.target.checked) {
+          newNumbers.push(e.target.value)
+        }
+        else {
+
+        }
+        setOptions({
+          ...options,
+          numbersActive: numbersActive
+        })
+        return;
+        default:
+        setOptions({
+          ...options,
+          [e.target.name]: e.target.value
+        })
+    }
+    console.log('new form data:', options)
   }
   
   return (
@@ -17,33 +63,37 @@ export const TS_Options = () => {
         <div id="ts-options">
           <div className="timeshift-container">
             <ul className="ts-list">
+              {/* TimeShift Active */}
               <li className="ts-row">
-                <h4 className="ts-left">Option 1:</h4>
+                <h4 className="ts-left">TimeShift?:</h4>
                 <div className="ts-right">
-                  <input type="radio" value="yes" /> Yes
-                  <input type="radio" value="no" /> No
+                  <input type="radio" name="isActive" value="yes" onChange={handleChange} /> Yes
+                  <input type="radio" name="isActive" value="no" onChange={handleChange} /> No
                 </div>
               </li>
+
+              {/* Active Numbers */}
               <li className="ts-row">
-                <h4 className="ts-left">Option 2:</h4>
+                <h4 className="ts-left">Numbers Active:</h4>
                 <div className="ts-right">
-                  <input type="radio" value="red" /> Red
-                  <input type="radio" value="blue" /> Blue
-                  <input type="radio" value="green" /> Green
-                  <input type="radio" value="yellow" /> Yellow
+                  <input type="checkbox" value={1} name="numbersActive" onChange={handleChange} /> 1's
+                  <input type="checkbox" value={2} name="numbersActive" onChange={handleChange} /> 2's
+                  <input type="checkbox" value={3} name="numbersActive" onChange={handleChange} /> 3's
+                  <input type="checkbox" value={4} name="numbersActive" onChange={handleChange} /> 4's
+                  <input type="checkbox" value={5} name="numbersActive" onChange={handleChange} /> 5's
+                  <input type="checkbox" value={6} name="numbersActive" onChange={handleChange} /> 6's
+                  <input type="checkbox" value={7} name="numbersActive" onChange={handleChange} /> 7's
+                  <input type="checkbox" value={8} name="numbersActive" onChange={handleChange} /> 8's
+                  <input type="checkbox" value={9} name="numbersActive" onChange={handleChange} /> 9's
+                  <input type="checkbox" value={0} name="numbersActive" onChange={handleChange} /> 0's
                   <p>
                     second row instructions / options here. Time!{" "}
                     <input type="time" />
                   </p>
                 </div>
               </li>
-              <li className="ts-row">
-                <h4 className="ts-left">Option 3:</h4>
-                <div className="ts-right">
-                  <p>Pick a Date</p>
-                  <input type="date" />
-                </div>
-              </li>
+
+
               <li className="ts-row">
                 <h4 className="ts-left">Option 4:</h4>
                 <div className="ts-right">
@@ -58,6 +108,8 @@ export const TS_Options = () => {
                   <input type="radio" value="no" /> No
                 </div>
               </li>
+
+
               <li className="ts-row">
                 <h4 className="ts-left">Option 5:</h4>
                 <div className="ts-right">
@@ -78,6 +130,8 @@ export const TS_Options = () => {
                   </ul>
                 </div>
               </li>
+
+
               <li className="ts-row save">
                 <div className="save-wrapper">
                   <h3>Save</h3>
@@ -90,3 +144,13 @@ export const TS_Options = () => {
     </section>
   );
 };
+
+const mapStateToProps = (state: RootState) => ({
+  active: state.timeshift.active,
+  numbersActive: state.timeshift.numbersActive
+})
+
+export const TS_Options = connect(
+  mapStateToProps,
+  {  }
+)(TS_OptionsUI)

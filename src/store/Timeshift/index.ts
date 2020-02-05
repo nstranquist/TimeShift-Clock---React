@@ -1,6 +1,7 @@
 // Types
 export interface TimeshiftState {
   time: Date
+  active: boolean
   numbersActive: number[] // note: get the inactive numbers with selector
   preset: number | null
 }
@@ -9,7 +10,10 @@ export interface setTime {
   readonly type: 'SET_TIME'
   time: Date
 }
-
+export interface setActive {
+  readonly type: 'SET_ACTIVE'
+  active: boolean
+}
 export interface setPreset {
   readonly type: 'SET_PRESET'
   preset: number | null
@@ -18,6 +22,7 @@ export interface setPreset {
 export type TimeshiftActionTypes =
   | setPreset
   | setTime
+  | setActive
 
 
 // Actions
@@ -31,6 +36,7 @@ export function setTime(time: Date) {  // for now, setTime() can be used to both
 // Reducer
 const initialState: TimeshiftState = {
   time: new Date(),
+  active: false, // set to true later
   numbersActive: [],
   preset: null
 }
@@ -44,6 +50,11 @@ export default (
       return {
         ...state,
         time: action.time
+      }
+    case 'SET_ACTIVE':
+      return {
+        ...state,
+        active: action.active
       }
     case 'SET_PRESET':
       return {
