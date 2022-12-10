@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "node": "^12.1.0",
     "surge": "^0.20.4"
   }
